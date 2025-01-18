@@ -5,7 +5,7 @@ const Header = () => {
             <div className="dee-header">
                 <div className="circle-header"></div>
             </div>
-            <p>
+            <p className="ef">
                 EF
             </p>
 

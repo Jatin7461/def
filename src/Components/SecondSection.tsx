@@ -7,8 +7,14 @@ const SecondSection = () => {
 
     return <div className="second-section">
         <div className="left-section">
-            <div className="eight">8</div>
-            <div className="six">6</div>
+            <div className="eight"><p>
+                8
+            </p>
+            </div>
+            <div className="six"><p>
+                6
+            </p>
+            </div>
         </div>
         <div className="right-section">
             <div className="image-container">
@@ -19,8 +25,12 @@ const SecondSection = () => {
                     <img src="bookshelf.webp" />
                 </div>
             </div>
-            <div className="one">1</div>
-            <div className="nine">9</div>
+            <div className="one"><p>
+                1
+            </p>
+            </div>
+            <div className="nine">
+                <p>9</p></div>
         </div>
     </div>
 }

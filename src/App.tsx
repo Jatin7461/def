@@ -10,8 +10,15 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import ThirdSection from './Components/ThirdSection';
 import FourthSection from './Components/FourthSection';
 import SplitType from 'split-type';
+import ReactLenis from '@studio-freight/react-lenis';
+import FifthSection from './Components/FifthSection';
 
 function App() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+  const lenisRef: any = useRef();
 
   const container: any = useRef()
 
@@ -23,13 +30,11 @@ function App() {
     })
       .to('.circle', {
         scale: 0.3,
-        // duration: 1,
         delay: 0.5,
         ease: 'power1.inOut'
       })
       .to('.dee', {
         scale: 1.2,
-        // delay: 0.5
         ease: 'power1.inOut'
       }, '<')
       .to('.circle', {
@@ -55,7 +60,6 @@ function App() {
       .to('.dee', {
         scale: 1,
         ease: 'power1.inOut',
-        // opacity: 0
       }, '<')
       .to('.loading-animation', {
         display: 'none'
@@ -68,7 +72,10 @@ function App() {
         clipPath: 'circle(0% at 50% 50%)'
       }, '<+=0.1')
       .from('.landing-description .description .top', {
-        opacity: 0
+        opacity: 0,
+        onStart: () => {
+          lenisRef.current.lenis.options.smoothWheel = true
+        }
       })
 
     gsap.timeline({
@@ -83,12 +90,12 @@ function App() {
     })
       .to('.landing-image', {
         yPercent: -50,
-        // delay: 5,
-        // duration: 5,
       })
+      .to('.header', {
+        paddingTop: '1%'
+      }, '<')
       .to('.landing-image img', {
         scale: 1.5,
-        // duration: 5
       }, '<')
       .to('.landing-description', {
         yPercent: -20,
@@ -104,12 +111,12 @@ function App() {
         pin: true,
         scrub: true,
         start: 'top top',
-        end: '1200% bottom'
+        end: '1200% bottom',
       },
-      defaults: { ease: 'none' }
+      defaults: { ease: 'power1.in' }
     })
       .fromTo('.image-container', {
-        yPercent: 100,
+        yPercent: 150,
         scale: 1.5
       }, {
         yPercent: 0,
@@ -128,12 +135,12 @@ function App() {
         display: 'block'
       }, '<')
       .to(['.one'], {
-        xPercent: -300
+        xPercent: -500
       })
 
 
       .to('.nine', {
-        xPercent: -190
+        xPercent: -180
       }, '<+=20%')
       .to(['.one', '.nine'], {
         scale: 1.5,
@@ -155,28 +162,20 @@ function App() {
         opacity: 0,
         scale: 0
       }, '<')
-    // .to(['.image-container', '.six', '.eight'], {
-    //   yPercent: -10
-    // })
-    // .to('.image-container', {
-    //   yPercent: -30
-    // }, '<')
-    // .to('.six', {
-    //   yPercent: -15
-    // }, '<')
+      .to(['.image-container', '.six', '.eight'], {
+        yPercent: -100,
+      })
 
     gsap.timeline({
       scrollTrigger: {
         trigger: '.third-section',
-        scrub: true,
-        start: 'top top',
-        end: '300% bottom',
-        pin: true
+      },
+      defaults: {
+        ease: 'power1.out'
       }
     })
       .from(['.third-section'], {
         opacity: 0,
-        yPercent: 35
       })
 
     const fifthText = new SplitType('.text-above-image')
@@ -198,14 +197,15 @@ function App() {
         borderTopRightRadius: 1000,
         duration: 4,
         yPercent: 100,
-        // scaleX: 0.5
         xPercent: -100
       })
       .from('.right-circle', {
-        scale: 0
+        scale: 0,
+        duration: 4
       })
       .from('.left-text', {
-        opacity: 0
+        opacity: 0,
+        duration: 4
       }, '<')
       .to('.left-text p', {
         yPercent: -80,
@@ -222,6 +222,16 @@ function App() {
         borderTopRightRadius: 0,
         height: '100%'
       })
+      .to(['.header'], {
+        color: 'rgb(255, 246, 234)'
+      }, '<')
+      .to('.dee-header', {
+        backgroundColor: 'rgb(255, 246, 234)'
+      }, '<')
+      .to('.circle-header', {
+        backgroundColor: 'rgb(37, 35, 35)'
+      }, '<')
+
       .to('.right-circle', {
         yPercent: -120,
         duration: 3
@@ -237,58 +247,49 @@ function App() {
       }, '<+=50%')
 
 
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.fifth-section',
+        scrub: true,
+        start: 'top center',
+        end: 'bottom bottom'
+      }
+    })
+      // .to('.header', {
+      //   yPercent: -100
+      // }, '+=120%')
+      .from(['.d', '.e', '.f'], {
+        yPercent: 50,
+        stagger: 0.2
+      })
 
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.fifth-section',
-    //     scrub: true,
-    //     start: 'top bottom',
-    //     end: 'bottom bottom',
-    //     // pin: true,
-    //     // markers: true
-    //   },
-    //   defaults: { duration: 1 }
-    // })
-    //   .from('.fifth-section img', {
-    //     scale: 0,
-    //     duration: 20
-    //   })
-
-    // gsap.from(fifthText.words, {
-    //   yPercent: 100,
-    //   scrollTrigger: {
-    //     trigger: '.fifth-section',
-    //     start: 'top center',
-    //     end: 'center center',
-    //     markers: true,
-    //     scrub: true
-    //   },
-    //   duration: 1
-    // })
-
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.fifth-section',
-    //     scrub: true,
-    //     pin: true
-    //   }
-    // })
-    // .from()
-
-
-
+    gsap.to('.header', {
+      scrollTrigger: {
+        trigger: '.fifth-section',
+        scrub: true,
+        markers: true
+      },
+      yPercent: -120
+    })
 
   }, { scope: container })
+
+  
   return (
-    <div ref={container} className="App">
-      <Header />
-      <LoadingAnimation />
-      <FirstSection />
-      <SecondSection />
-      <ThirdSection />
-      <FourthSection />
-      {/* <FifthSection /> */}
-    </div>
+    <ReactLenis root ref={lenisRef} options={{
+      smoothWheel: false
+    }}>
+      <div ref={container} className="App">
+        <Header />
+        <LoadingAnimation />
+        <FirstSection />
+        <SecondSection />
+        <ThirdSection />
+        <FourthSection />
+        <FifthSection />
+        {/* <div className="mouse"></div> */}
+      </div>
+    </ReactLenis>
   );
 }
 
