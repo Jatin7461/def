@@ -1,38 +1,347 @@
-.App {
-  text-align: center;
+body {
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loading-animation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.loading-animation .dee {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  background-color: black;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading-animation .circle {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  border-radius: 100%;
+  background-color: rgb(255, 246, 234);
+}
+
+.header {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding-top: 2%;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* height: 100px; */
+}
+
+.circle-header {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: auto;
+  background-color: rgb(255, 246, 234);
+}
+
+.dee-header {
+  width: 30px;
+  margin-top: 3px;
+  display: flex;
+  height: 30px;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  background-color: black;
+}
+
+.def {
+  flex: 2;
+  margin-left: 70px;
+  display: flex;
+  font-weight: bold;
+  font-size: 40px;
+  align-items: center;
+}
+
+.def p {
+  margin: 0;
+  line-height: 40px;
+}
+
+.right-side {
+  display: flex;
+  flex: 2;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: auto;
+  justify-content: space-around;
+}
+
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(255, 246, 234);
+}
+
+.landing-image {
+  clip-path: circle(18.0% at 50% 50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image img {
+  /* width: 100%; */
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+
+.landing-description {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  padding: 2%;
+  box-sizing: border-box;
+  align-items: end;
+  font-weight: 600;
+  justify-content: space-between;
+}
+
+.landing-description .email {
+  flex: 2;
+  text-transform: uppercase;
+}
+
+.landing-description .description {
+  flex: 1;
+}
+
+.landing-description .description .top {
+  margin-bottom: 10%;
+  max-width: 80%;
+}
+
+.landing-description .description .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom p {
+  margin: 0;
+}
+
+.first-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.second-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* overflow: hidden; */
+}
+
+.second-section .right-section {
+  flex: 1;
+  padding-right: 7%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.second-section .right-section .image-container {
+  width: 60%;
+  height: 60%;
+  border-radius: 3%;
+  margin-top: 15%;
+  overflow: hidden;
+
+}
+
+.second-section .left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.one,
+.nine,
+.eight,
+.six {
+  display: none;
+  font-size: 35vw;
+  line-height: 30vw;
+}
+
+.one,
+.nine {
+  position: absolute;
+  z-index: -1;
+}
+
+.third-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  box-sizing: border-box;
+  align-items: center;
+  font-size: 2vw;
+  font-weight: 600;
+}
+
+.third-section .left {}
+
+.third-section .right {
+  max-width: 500px;
+}
+
+
+.image-container .image1,
+.image-container .image2 {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+}
+
+.image-container .image1 {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); */
+}
+
+.image-container .image2 {
+  z-index: 1;
+}
+
+.image1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3%;
+  transform: scale(1.2, 1.2);
+}
+
+.image2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.fourth-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+}
+
+.fourth-section .round-div {
+  width: 100%;
+  height: 90%;
+  background-color: rgb(37, 35, 35);
+  display: flex;
+  border-top-right-radius: 400px;
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 8%;
+  padding-top: 6%;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.fourth-section .round-div .right-circle {
+  /* flex: 1; */
+  background-color: antiquewhite;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+}
+
+.fourth-section .round-div .left-text {
+  flex: 1;
   color: white;
+  clip-path: polygon(0 2%, 100% 2%, 100% 98%, 0% 98%);
+  font-size: 5vw;
+  line-height: 6vw;
+  margin-right: 2%;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+
+.fourth-section .round-div .left-text .gradient {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom,
+      rgb(37, 35, 35, 1),
+      rgb(37, 35, 35, 0),
+      rgb(37, 35, 35, 1) 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fifth-section {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(37, 35, 35);
+  position: relative;
+  margin-top: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth-section img {
+  width: 30%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 3%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.fourth-section .fifth-text p {
+  margin: 0;
+  font-size: 9vw;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(255, 246, 234);
+}
+
+.fourth-section .fifth-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.text-above-image .line {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
