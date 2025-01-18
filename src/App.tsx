@@ -1,20 +1,15 @@
 import React, { useRef } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import LoadingAnimation from './Components/LoadingAnimation';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Header from './Components/Header';
-import LandingImage from './Components/LandingImage';
-import LandingDescription from './Components/LandingDescription';
 import FirstSection from './Components/FirstSection';
 import SecondSection from './Components/SecondSection';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ThirdSection from './Components/ThirdSection';
 import FourthSection from './Components/FourthSection';
-import FifthSection from './Components/FifthSection';
 import SplitType from 'split-type';
-import { DynamicReadUsage } from 'three/src/constants';
 
 function App() {
 
