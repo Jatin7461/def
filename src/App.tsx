@@ -267,7 +267,6 @@ function App() {
       scrollTrigger: {
         trigger: '.fifth-section',
         scrub: true,
-        markers: true
       },
       yPercent: -120
     })
