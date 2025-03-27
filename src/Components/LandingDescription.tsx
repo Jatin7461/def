@@ -1,3 +1,5 @@
+import Marquee from "./Marquee"
+
 const LandingDescription = () => {
     return <div className="landing-description">
 

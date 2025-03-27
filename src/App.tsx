@@ -68,9 +68,12 @@ function App() {
         opacity: 0,
         delay: 0.5
       }, '<')
-      .from('.landing-image', {
+      .from('.landing-image-container', {
         clipPath: 'circle(0% at 50% 50%)'
       }, '<+=0.1')
+      .from('.first-section-marquee', {
+        opacity: 0
+      }, '<')
       .from('.landing-description .description .top', {
         opacity: 0,
         onStart: () => {
@@ -83,18 +86,21 @@ function App() {
         trigger: '.first-section',
         scrub: true,
         start: 'top top',
-        end: '300% bottom',
+        end: '200% bottom',
         pin: true,
       },
       defaults: { ease: 'none' }
     })
-      .to('.landing-image', {
+      .to(['.landing-image'], {
         yPercent: -50,
       })
+      // .to('.first-section-marquee .marquee-text', {
+      //   yPercent: -50
+      // }, '<')
       .to('.header', {
         paddingTop: '1%'
       }, '<')
-      .to('.landing-image img', {
+      .to(['.landing-image-container img'], {
         scale: 1.5,
       }, '<')
       .to('.landing-description', {
@@ -111,7 +117,7 @@ function App() {
         pin: true,
         scrub: true,
         start: 'top top',
-        end: '1200% bottom',
+        end: '700% bottom',
       },
       defaults: { ease: 'power1.in' }
     })
@@ -185,7 +191,7 @@ function App() {
       scrollTrigger: {
         trigger: '.fourth-section',
         start: 'top top',
-        end: '1800% bottom',
+        end: '1200% bottom',
         scrub: true,
         pin: true
       },
@@ -271,9 +277,23 @@ function App() {
       yPercent: -120
     })
 
+    const marqueeContainer = document.querySelector('.first-section-marquee')!
+    const marqueeContainer2 = document.querySelector('.image-marquee')!
+    console.log(marqueeContainer.children)
+    const width = parseInt(window.getComputedStyle(document.querySelector('.marquee-text')!).getPropertyValue('width'))
+    const gap = parseInt(window.getComputedStyle(document.querySelector('.marquee')!).getPropertyValue('column-gap'))
+    console.log(width, gap)
+
+    gsap.fromTo([marqueeContainer.children, marqueeContainer2.children], { x: 0 }, {
+      x: (width + gap) * -1,
+      repeat: -1,
+      duration: 20,
+      ease: 'none'
+    })
+
   }, { scope: container })
 
-  
+
   return (
     <ReactLenis root ref={lenisRef} options={{
       smoothWheel: false
