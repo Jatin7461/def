@@ -520,9 +520,9 @@ body {
 }
 
 @media only screen and (max-width:1024px) {
-  body {
+  /* body {
     overflow: hidden;
-  }
+  } */
 
 
   .third-section .right {
