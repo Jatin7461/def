@@ -551,7 +551,8 @@ function App() {
 
   return (
     <ReactLenis root ref={lenisRef} options={{
-      smoothWheel: false
+      smoothWheel: false,
+      touchMultiplier: 1
     }}>
       <div ref={container} className="App">
         <Header />
