@@ -356,6 +356,7 @@ function App() {
           opacity: 0,
           onComplete: () => {
             lenisRef.current.lenis.options.smoothWheel = true
+            lenisRef.current.lenis.options.syncTouch = true
           }
         }, '<')
 
@@ -553,7 +554,8 @@ function App() {
     <ReactLenis root ref={lenisRef} options={{
       smoothWheel: false,
       touchMultiplier: 1,
-      
+      eventsTarget: document.body,
+      syncTouch: false
     }}>
       <div ref={container} className="App">
         <Header />
