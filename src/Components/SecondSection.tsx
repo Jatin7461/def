@@ -7,6 +7,14 @@ const SecondSection = () => {
 
     return <div className="second-section">
         <div className="left-section">
+            <div className="one-nine">
+                <div className="one"><p>
+                    1
+                </p>
+                </div>
+                <div className="nine">
+                    <p>9</p></div>
+            </div>
             <div className="eight"><p>
                 8
             </p>

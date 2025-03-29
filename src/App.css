@@ -507,3 +507,214 @@ body {
 /* . {
   z-index: 100;
 } */
+
+.loading-animation,
+.first-section,
+.second-section,
+.third-section,
+.fourth-section,
+.fifth-section {
+  /* width: 100%;
+    height: 100%; */
+  overflow: hidden;
+}
+
+@media only screen and (max-width:1024px) {
+  body {
+    overflow: hidden;
+  }
+
+
+  .third-section .right {
+    max-width: 100%;
+  }
+
+  /* html,
+  body, */
+  /* #root,
+  .App, */
+  .loading-animation,
+  .first-section,
+  .second-section,
+  .third-section,
+  .fourth-section,
+  .fifth-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .landing-description {
+    flex-direction: column-reverse;
+    align-items: start;
+    margin-bottom: 5%;
+  }
+
+  .landing-description .description {
+    margin-bottom: 5%;
+    font-weight: 500;
+  }
+
+  .landing-description .description .top {
+    max-width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .second-section {
+    flex-direction: column;
+  }
+
+  .second-section .right-section {
+    padding: 0;
+  }
+
+  .second-section .image-container {
+    /* display: none; */
+  }
+
+  .eight p,
+  .six p,
+  .one p,
+  .nine p {
+    /* position: absolute; */
+    margin: 0;
+    font-size: 60vw;
+    font-weight: 700;
+  }
+
+  /* .second-section .left-section{
+
+  } */
+
+  .second-section .right-section .one {
+    display: none;
+  }
+
+  .second-section .right-section .nine {
+    display: none;
+  }
+
+  .second-section .left-section .one-nine {
+    width: 100%;
+    height: 100%;
+  }
+
+  .one,
+  .nine {
+    position: relative;
+  }
+
+  .one-nine {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .second-section .left-section {
+    position: relative;
+  }
+
+  .third-section {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5%;
+    padding-top: 10%;
+    align-items: start;
+    box-sizing: border-box;
+    font-size: 5vw;
+    line-height: 6vw;
+  }
+
+  .fourth-section .round-div {
+    border-top-right-radius: 40px;
+    flex-direction: column;
+  }
+
+  .fourth-section .round-div .left-text {
+    flex: 2;
+    margin: 0;
+    font-size: 10vw;
+    line-height: 12vw;
+    overflow: hidden;
+  }
+
+  .fourth-section .round-div .right-circle {
+    align-self: flex-end;
+  }
+
+  .fourth-section img {
+    width: 70%;
+  }
+
+  .fifth-section .first-row {
+    flex-direction: column;
+  }
+
+  .fifth-section .first-row .first-column,
+  .fifth-section .first-row .second-column,
+  .fifth-section .third-row,
+  .fifth-section .second-row,
+  .fifth-section .third-row .first-column,
+  .fifth-section .third-row .second-column {
+    flex-direction: column;
+    font-size: 5vw;
+    gap: 0;
+  }
+
+  .fifth-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 3%;
+  }
+
+
+
+  .fifth-section .first-row .second-column {
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .fifth-section p {
+    margin: 1%;
+  }
+
+  .fifth-section hr {
+    width: 100%;
+  }
+
+  .fifth-section .first-row {
+    gap: 0;
+  }
+
+  .fifth-section .third-row {
+    font-weight: 300;
+  }
+
+  .header {
+    padding: 4%;
+    box-sizing: border-box;
+  }
+
+  .header .def {
+    margin: 0;
+    flex: 1;
+  }
+
+  .header .right-side {
+    flex: 3;
+    font-weight: 500;
+  }
+
+  .header .arch {
+    font-size: 12px;
+  }
+
+  .landing-image .landing-image-container {
+    clip-path: circle(21.0% at 50% 50%);
+
+  }
+}
